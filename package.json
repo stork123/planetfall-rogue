@@ -1,0 +1,38 @@
+{
+  "name": "planetfall-rogue",
+  "version": "1.0.0",
+  "description": "Planetfall — Rogue-style visual mapper for the 1983 Infocom text adventure",
+  "main": "main.js",
+  "author": "stork123",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --portable",
+    "dist-installer": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.stork123.planetfallrogue",
+    "productName": "Planetfall Rogue",
+    "directories": { "output": "dist" },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "planetfall_data.json"
+    ],
+    "extraResources": [
+      "dfrotz.exe",
+      "PLANETFA.DAT",
+      "planetfall_data.json"
+    ],
+    "win": {
+      "target": ["portable"],
+      "artifactName": "PlanetfallRogue-${version}-Portable.exe",
+      "signAndEditExecutable": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  }
+}
