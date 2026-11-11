@@ -36,8 +36,18 @@
     color:var(--accent); font-size:18px; z-index:10;
   }
   #side-panel {
-    width:420px; min-width:420px; background:var(--panel);
-    border-left:1px solid var(--border); display:flex; flex-direction:column;
+    width: 420px; min-width: 320px; background: var(--panel);
+    border-left: 1px solid var(--border); display: flex; flex-direction: column;
+  }
+  @media (max-width: 768px) {
+    body { flex-direction: column; }
+    #map-panel { flex: 1 1 45vh; min-height: 200px; }
+    #side-panel { flex: 1 1 55vh; width: 100%; min-width: 0; border-left: none; border-top: 1px solid var(--border); }
+    #game-output { font-size: 14px; }
+    #command-input { font-size: 16px; }
+    #send-btn { padding: 12px 24px; }
+    #room-name { font-size: 18px; }
+    .canvas-hint { font-size: 9px; }
   }
   #status-bar {
     padding:8px 16px; background:#06060c;
@@ -65,6 +75,9 @@
     display:inline-block; margin:2px 3px; padding:3px 10px;
     background:#14142a; border:1px solid #222240; border-radius:3px;
     cursor:pointer; color:var(--fg); font-size:11px; transition:all 0.15s;
+  }
+  @media (max-width: 768px) {
+    #room-exits .exit-btn { padding: 8px 16px; font-size: 13px; margin: 3px 4px; }
   }
   #room-exits .exit-btn:hover { background:var(--accent); color:#000; border-color:var(--accent); }
   #room-exits .exit-btn.locked { opacity:0.45; border-color:#442200; color:#886644; }
