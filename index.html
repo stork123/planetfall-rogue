@@ -52,12 +52,12 @@
   #status-bar {
     padding:8px 16px; background:#06060c;
     border-bottom:1px solid var(--border); font-size:12px;
-    display:flex; justify-content:space-between; align-items:center;
+    display:flex; justify-content:space-between; align-items:center; flex-shrink:0;
   }
   #status-bar .stat { color:var(--text-dim); }
   #status-bar .stat .val { color:var(--accent); font-weight:bold; }
   #status-bar .rank { color:var(--green); }
-  #room-info { padding:12px 16px; border-bottom:1px solid var(--border); }
+  #room-info { padding:12px 16px; border-bottom:1px solid var(--border); flex-shrink:0; }
   #room-name {
     color:var(--accent); font-size:20px; font-weight:bold;
     margin-bottom:6px; text-shadow:0 0 10px rgba(255,204,0,0.15);
@@ -82,7 +82,11 @@
   #room-exits .exit-btn:hover { background:var(--accent); color:#000; border-color:var(--accent); }
   #room-exits .exit-btn.locked { opacity:0.45; border-color:#442200; color:#886644; }
   #game-output {
-    flex:1; padding:12px 16px; overflow-y:auto; font-size:13px; line-height:1.55; color:var(--fg);
+    flex: 1; padding: 12px 16px; overflow-y: auto; font-size: 13px; line-height: 1.55; color: var(--fg);
+    min-height: 80px; max-height: 50vh;
+  }
+  @media (max-width: 768px) {
+    #game-output { max-height: 30vh; min-height: 60px; }
   }
   #game-output .line { margin-bottom:3px; }
   #game-output .cmd { color:var(--accent); }
@@ -95,7 +99,7 @@
   #game-output::-webkit-scrollbar-thumb { background:#222; border-radius:3px; }
   #command-bar {
     padding:10px 16px; border-top:1px solid var(--border);
-    background:#040408; display:flex; gap:8px;
+    background:#040408; display:flex; gap:8px; flex-shrink:0;
   }
   #command-input {
     flex:1; background:#111122; border:1px solid #222240; color:var(--fg);
@@ -111,7 +115,7 @@
   #send-btn:disabled { background:#333; color:#666; }
   #legend {
     padding:6px 16px; font-size:10px; color:var(--text-dim);
-    border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:6px;
+    border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:6px; flex-shrink:0;
   }
   #legend .dot { display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:3px; vertical-align:middle; }
   #restart-btn { margin-left:auto; color:#ff6644; cursor:pointer; text-decoration:underline; }
