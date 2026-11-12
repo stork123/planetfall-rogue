@@ -40,14 +40,14 @@
     border-left: 1px solid var(--border); display: flex; flex-direction: column;
   }
   @media (max-width: 768px) {
-    body { flex-direction: column; }
-    #map-panel { flex: 1 1 45vh; min-height: 200px; }
-    #side-panel { flex: 1 1 55vh; width: 100%; min-width: 0; border-left: none; border-top: 1px solid var(--border); }
-    #game-output { font-size: 14px; }
+    body { flex-direction: column; height: 100vh; overflow: hidden; }
+    #map-panel { flex: 0 0 35vh; min-height: 180px; }
+    #side-panel { flex: 1 1 auto; width: 100%; min-width: 0; border-left: none; border-top: 1px solid var(--border); overflow: hidden; }
+    #game-output { max-height: 25vh; min-height: 40px; }
+    #command-bar { padding: 10px 12px; }
     #command-input { font-size: 16px; }
-    #send-btn { padding: 12px 24px; }
-    #room-name { font-size: 18px; }
-    .canvas-hint { font-size: 9px; }
+    #send-btn { padding: 12px 20px; font-size: 14px; }
+    #room-exits .exit-btn { padding: 8px 16px; font-size: 13px; margin: 3px 4px; }
   }
   #status-bar {
     padding:8px 16px; background:#06060c;
